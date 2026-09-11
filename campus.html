@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusHub - College Event Management</title>
+
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <div class="logo">
+            Campus<span>Hub</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#events">Events</a>
+            <a href="#pass">My Pass</a>
+            <a href="#budget">Budget</a>
+
+            <button onclick="openChat()">
+                💬 Assistant
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+
+        <div>
+            <p class="small-title">COLLEGE EVENT MANAGEMENT</p>
+
+            <h1>
+                All your campus<br>
+                events in one place.
+            </h1>
+
+            <p>
+                Discover events, register easily,
+                manage your digital pass and track
+                event budgets.
+            </p>
+
+            <a href="#events" class="main-btn">
+                Explore Events
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section">
+
+        <h2>Campus Dashboard</h2>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <span>EVENTS</span>
+                <strong id="eventCount">6</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>REGISTRATIONS</span>
+                <strong id="registrationCount">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>CHECK-INS</span>
+                <strong id="checkinCount">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>BUDGET LEFT</span>
+                <strong id="remainingSmall">₹25,000</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENTS -->
+    <section id="events" class="events-section">
+
+        <h1>DISCOVER EVENTS FOR YOU</h1>
+
+        <!-- INTERESTS -->
+        <div class="interest-box">
+
+            <div class="interest-heading">
+
+                <h2>YOUR INTERESTS</h2>
+
+                <span>
+                    Tap to refine recommendations
+                </span>
+
+            </div>
+
+
+            <div class="interest-buttons">
+
+                <button onclick="filterEvents('All')">
+                    All
+                </button>
+
+                <button onclick="filterEvents('Tech')">
+                    Tech
+                </button>
+
+                <button onclick="filterEvents('Music')">
+                    Music
+                </button>
+
+                <button onclick="filterEvents('Business')">
+                    Business
+                </button>
+
+                <button onclick="filterEvents('Art')">
+                    Art
+                </button>
+
+                <button onclick="filterEvents('Wellness')">
+                    Wellness
+                </button>
+
+                <button onclick="filterEvents('Sports')">
+                    Sports
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT CARDS -->
+        <div id="eventContainer" class="event-grid"></div>
+
+    </section>
+
+
+    <!-- MY PASS -->
+    <section id="pass" class="section">
+
+        <h2>MY DIGITAL PASS</h2>
+
+        <div id="passCard" class="pass-card">
+
+            <p>
+                Register for an event to generate
+                your digital pass.
+            </p>
+
+        </div>
+
+
+        <!-- CHECK IN -->
+
+        <div class="checkin">
+
+            <h3>Event Check-In</h3>
+
+            <p>
+                Enter your pass code:
+            </p>
+
+            <input
+                type="text"
+                id="passInput"
+                placeholder="Example: CH-123456"
+            >
+
+            <button onclick="checkIn()">
+                Check In
+            </button>
+
+            <p id="checkMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUDGET -->
+    <section id="budget" class="section">
+
+        <h2>EVENT BUDGET</h2>
+
+        <div class="budget-card">
+
+            <div class="budget-info">
+
+                <div>
+                    <span>Total Budget</span>
+                    <strong>₹1,00,000</strong>
+                </div>
+
+                <div>
+                    <span>Spent</span>
+                    <strong id="spent">₹75,000</strong>
+                </div>
+
+                <div>
+                    <span>Remaining</span>
+                    <strong id="remaining">₹25,000</strong>
+                </div>
+
+            </div>
+
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+
+            <div class="expense">
+
+                <input
+                    type="number"
+                    id="expenseInput"
+                    placeholder="Enter expense"
+                >
+
+                <button onclick="addExpense()">
+                    Add Expense
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI ASSISTANT -->
+
+    <div id="chatBox" class="chat-box">
+
+        <div class="chat-header">
+
+            <strong>🤖 Campus Assistant</strong>
+
+            <button onclick="closeChat()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="messages" class="messages">
+
+            <div class="bot-message">
+                Hi! 👋 I'm Campus Assistant.
+                Ask me about events, registration,
+                passes or budget.
+            </div>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Ask something..."
+                onkeypress="if(event.key === 'Enter') sendMessage()"
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>CampusHub</h3>
+
+        <p>
+            College Event Management System
+        </p>
+
+        <p>
+            © 2026 CampusHub
+        </p>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

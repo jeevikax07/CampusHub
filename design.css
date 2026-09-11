@@ -1,0 +1,853 @@
+/* =================================
+   BASIC
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #071a33;
+    color: #eaf2ff;
+}
+
+
+/* =================================
+   NAVBAR
+================================= */
+
+header {
+    background: #031225;
+    color: white;
+
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #4da3ff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #4da3ff;
+}
+
+nav button {
+    background: #1769aa;
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: #2587d1;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    min-height: 500px;
+
+    padding: 100px 8%;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #071a33,
+        #0b2d52
+    );
+}
+
+.small-title {
+    color: #4da3ff;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 60px;
+
+    line-height: 1;
+
+    margin: 20px 0;
+
+    color: #ffffff;
+}
+
+.hero p {
+    max-width: 550px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #b9cce3;
+}
+
+.main-btn {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    background: #1769aa;
+
+    color: white;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+}
+
+.main-btn:hover {
+    background: #2587d1;
+}
+
+
+/* =================================
+   GENERAL SECTIONS
+================================= */
+
+.section {
+    padding: 70px 7%;
+
+    background: #071a33;
+}
+
+.section h2 {
+    font-size: 35px;
+
+    margin-bottom: 30px;
+
+    color: white;
+}
+
+
+/* =================================
+   DASHBOARD
+================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.stat-card {
+    background: #0b2d52;
+
+    border: 2px solid #245783;
+
+    padding: 25px;
+
+    box-shadow: 5px 5px 0 #031225;
+
+    border-radius: 4px;
+}
+
+.stat-card span {
+    display: block;
+
+    color: #5db2ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.stat-card strong {
+    display: block;
+
+    font-size: 32px;
+
+    margin-top: 15px;
+
+    color: white;
+}
+
+
+/* =================================
+   EVENTS
+================================= */
+
+.events-section {
+    padding: 60px 7%;
+
+    background: #081d38;
+}
+
+.events-section > h1 {
+    font-size: 45px;
+
+    margin-bottom: 30px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+}
+
+
+/* =================================
+   INTEREST BOX
+================================= */
+
+.interest-box {
+    background: #0d3158;
+
+    border: 2px solid #3b6d99;
+
+    padding: 28px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 6px 6px 0 #031225;
+
+    position: relative;
+}
+
+.interest-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+
+    left: 30px;
+
+    width: 16px;
+
+    height: 16px;
+
+    background: #3da5ff;
+
+    border: 3px solid #031225;
+
+    border-radius: 50%;
+}
+
+.interest-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 2px dashed #5b7895;
+
+    padding-bottom: 15px;
+}
+
+.interest-heading h2 {
+    margin: 0;
+
+    font-size: 24px;
+
+    color: white;
+}
+
+.interest-heading span {
+    color: #aec4da;
+}
+
+
+/* =================================
+   INTEREST BUTTONS
+================================= */
+
+.interest-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.interest-buttons button {
+    background: #092441;
+
+    color: #dcecff;
+
+    border: 2px solid #6c91b1;
+
+    border-radius: 25px;
+
+    padding: 9px 20px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.interest-buttons button:hover {
+    background: #1769aa;
+
+    color: white;
+
+    border-color: #4da3ff;
+}
+
+
+/* =================================
+   EVENT GRID
+================================= */
+
+.event-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =================================
+   EVENT CARD
+================================= */
+
+.event-card {
+    background: #0d2b4d;
+
+    border: 2px solid #477397;
+
+    padding: 25px;
+
+    min-height: 300px;
+
+    box-shadow: 6px 6px 0 #031225;
+
+    transition: 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #4da3ff;
+}
+
+
+/* CATEGORY */
+
+.event-category {
+    color: #4da3ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+/* EVENT TITLE */
+
+.event-card h3 {
+    font-size: 23px;
+
+    margin: 0 0 15px;
+
+    font-weight: 900;
+
+    color: white;
+}
+
+
+/* DESCRIPTION */
+
+.event-description {
+    color: #b6c8db;
+
+    line-height: 1.5;
+
+    font-size: 15px;
+}
+
+
+/* EVENT DETAILS */
+
+.event-details {
+    color: #aac0d5;
+
+    line-height: 2;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+}
+
+
+/* REGISTER BUTTON */
+
+.event-card button {
+    background: #1769aa;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    margin-top: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+}
+
+.event-card button:hover {
+    background: #2587d1;
+}
+
+
+/* =================================
+   DIGITAL PASS
+================================= */
+
+.pass-card {
+    background: #0d2b4d;
+
+    border: 2px solid #477397;
+
+    padding: 30px;
+
+    max-width: 500px;
+
+    box-shadow: 6px 6px 0 #031225;
+
+    margin-bottom: 40px;
+}
+
+.pass-card h3 {
+    color: white;
+}
+
+.pass-card p {
+    color: #b6c8db;
+}
+
+.pass-code {
+    background: #031225;
+
+    color: #5db2ff;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    padding: 15px;
+
+    text-align: center;
+
+    margin: 20px 0;
+
+    border: 1px solid #3d719c;
+}
+
+.checkin {
+    max-width: 500px;
+}
+
+.checkin p {
+    color: #b6c8db;
+}
+
+.checkin input {
+    padding: 12px;
+
+    border: 2px solid #477397;
+
+    background: #092441;
+
+    color: white;
+
+    width: 65%;
+}
+
+.checkin input::placeholder {
+    color: #829bb3;
+}
+
+.checkin button {
+    padding: 12px;
+
+    background: #1769aa;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.checkin button:hover {
+    background: #2587d1;
+}
+
+
+/* =================================
+   BUDGET
+================================= */
+
+.budget-card {
+    background: #0d2b4d;
+
+    border: 2px solid #477397;
+
+    padding: 30px;
+
+    box-shadow: 6px 6px 0 #031225;
+}
+
+.budget-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.budget-info span {
+    display: block;
+
+    color: #9fb6cc;
+}
+
+.budget-info strong {
+    font-size: 25px;
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: white;
+}
+
+.progress {
+    height: 20px;
+
+    background: #06182d;
+
+    margin: 30px 0;
+
+    border: 2px solid #477397;
+}
+
+#progressBar {
+    height: 100%;
+
+    width: 75%;
+
+    background: #2587d1;
+}
+
+.expense {
+    display: flex;
+
+    gap: 10px;
+}
+
+.expense input {
+    padding: 12px;
+
+    flex: 1;
+
+    border: 2px solid #477397;
+
+    background: #092441;
+
+    color: white;
+}
+
+.expense input::placeholder {
+    color: #829bb3;
+}
+
+.expense button {
+    background: #1769aa;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+}
+
+.expense button:hover {
+    background: #2587d1;
+}
+
+
+/* =================================
+   ASSISTANT
+================================= */
+
+.chat-box {
+    display: none;
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 350px;
+
+    height: 450px;
+
+    background: #0b2d52;
+
+    border: 2px solid #477397;
+
+    box-shadow: 7px 7px 0 #031225;
+
+    z-index: 1000;
+
+    flex-direction: column;
+}
+
+.chat-header {
+    background: #031225;
+
+    color: white;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.chat-header button {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.messages {
+    flex: 1;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+.bot-message,
+.user-message {
+    padding: 10px;
+
+    margin: 8px 0;
+
+    border-radius: 8px;
+}
+
+.bot-message {
+    background: #153d63;
+
+    color: #d9e9f8;
+}
+
+.user-message {
+    background: #1769aa;
+
+    color: white;
+
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+
+    padding: 10px;
+
+    border-top: 2px solid #315572;
+}
+
+.chat-input input {
+    flex: 1;
+
+    padding: 10px;
+
+    border: 1px solid #477397;
+
+    background: #092441;
+
+    color: white;
+}
+
+.chat-input input::placeholder {
+    color: #829bb3;
+}
+
+.chat-input button {
+    background: #1769aa;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    background: #031225;
+
+    color: #aec4da;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+footer h3 {
+    color: white;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 10px;
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-info {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .chat-box {
+        width: 90%;
+
+        right: 5%;
+    }
+
+}
